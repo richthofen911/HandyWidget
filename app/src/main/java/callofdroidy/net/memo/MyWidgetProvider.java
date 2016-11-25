@@ -48,11 +48,11 @@ public class MyWidgetProvider extends AppWidgetProvider {
         }
 
         // timer to show time on the widget
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 1000);
+        //Timer timer = new Timer();
+        //timer.scheduleAtFixedRate(new MyTime(context, appWidgetManager), 1, 1000);
         // timer to show weather, update hourly
-        Timer wTimer = new Timer();
-        wTimer.schedule(new MyWeather(context, appWidgetManager), 1, 3600000);
+        //Timer wTimer = new Timer();
+        //wTimer.schedule(new MyWeather(context, appWidgetManager), 1, 3600000);
     }
 
     @Override
@@ -73,12 +73,12 @@ public class MyWidgetProvider extends AppWidgetProvider {
         DateFormat format = SimpleDateFormat.getTimeInstance(SimpleDateFormat.MEDIUM, Locale.getDefault());
         public MyTime(Context context, AppWidgetManager appWidgetManager) {
             this.appWidgetManager = appWidgetManager;
-            remoteViews = new RemoteViews(context.getPackageName(), R.layout.weather_widget);
+            remoteViews = new RemoteViews(context.getPackageName(), R.layout.my_widget);
             thisWidget = new ComponentName(context, MyWidgetProvider.class);
         }
         @Override
         public void run() {
-            remoteViews.setTextViewText(R.id.title, format.format(new Date()));
+            remoteViews.setTextViewText(R.id.tv_widget_title, format.format(new Date()));
             appWidgetManager.updateAppWidget(thisWidget, remoteViews);
         }
     }
@@ -89,7 +89,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
         ComponentName thisWidget;
         public MyWeather(Context context, AppWidgetManager appWidgetManager) {
             this.appWidgetManager = appWidgetManager;
-            remoteViews = new RemoteViews(context.getPackageName(), R.layout.weather_widget);
+            remoteViews = new RemoteViews(context.getPackageName(), R.layout.my_widget);
             thisWidget = new ComponentName(context, MyWidgetProvider.class);
         }
         @Override
@@ -114,14 +114,14 @@ public class MyWidgetProvider extends AppWidgetProvider {
                 image_url = now.getString("weather_pic");
                 Bitmap weather_pic = getBitmap(image_url);
                 System.out.println("temp:"+temp);
-                remoteViews.setTextViewText(R.id.temperature, city +":"+ temp);
+                remoteViews.setTextViewText(R.id.tv_widget_content, city +":"+ temp);
                 if(weather_pic!=null){
-                    remoteViews.setImageViewBitmap(R.id.image,weather_pic);
+                    remoteViews.setImageViewBitmap(R.id.iv_widget_image,weather_pic);
                 }
                 appWidgetManager.updateAppWidget(thisWidget, remoteViews);
             } catch (JSONException e) {
                 e.printStackTrace();
-                remoteViews.setTextViewText(R.id.temperature, city+"：-5℃");
+                remoteViews.setTextViewText(R.id.tv_widget_content, city+"：-5℃");
                 appWidgetManager.updateAppWidget(thisWidget, remoteViews);
             }catch (IOException e){
                 e.printStackTrace();

@@ -5,14 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="callofdroidy.net.memo.MainActivity">
 
     <TextView
         android:id="@+id/tv_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="introduction" />
+        android:layout_marginTop="10dp"
+        android:text="@string/intro" />
+
+    <TextView
+        android:id="@+id/tv_how_to"
+        android:layout_marginTop="15dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_intro"
+        android:text="@string/howto" />
+
+    <VideoView
+        android:id="@+id/vv_intro"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/tv_intro"
+        android:layout_toEndOf="@id/tv_how_to"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/iv_cover_layer"
+        android:src="@drawable/ic_play_circle_outline_black_24dp"
+        android:layout_width="match_parent"
+        android:layout_height="278dp"
+        android:layout_toEndOf="@id/tv_how_to"
+        android:layout_below="@id/tv_intro"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:background="@android:color/darker_gray"
+        android:alpha="0.5"/>
 </RelativeLayout>
