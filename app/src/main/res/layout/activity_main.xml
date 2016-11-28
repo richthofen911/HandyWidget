@@ -9,7 +9,7 @@
     android:paddingRight="5dp"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="callofdroidy.net.memo.MainActivity">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_intro"
@@ -29,7 +29,7 @@
     <VideoView
         android:id="@+id/vv_intro"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tv_intro"
         android:layout_toEndOf="@id/tv_how_to"
         android:layout_marginTop="20dp"/>
@@ -42,6 +42,7 @@
         android:layout_toEndOf="@id/tv_how_to"
         android:layout_below="@id/tv_intro"
         android:layout_marginTop="20dp"
+        android:layout_alignBottom="@id/vv_intro"
         android:clickable="true"
         android:background="@android:color/darker_gray"
         android:alpha="0.5"/>

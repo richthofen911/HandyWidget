@@ -5,7 +5,7 @@
     android:icon="@drawable/icon_in_widget_picker"
     android:previewImage="@mipmap/ic_launcher"
     android:initialLayout="@layout/my_widget"
-    android:configure="callofdroidy.net.memo.ActivityWidgetConfigure"
+    android:configure="callofdroidy.net.memosticker.ActivityWidgetConfigure"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
 </appwidget-provider>

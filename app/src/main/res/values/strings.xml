@@ -1,18 +1,16 @@
 <resources>
-    <string name="app_name">Memo</string>
+    <string name="app_name">MemoSticker</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
-    <string name="intro">This app is designed to pin a quick and simple memo on your home screen.</string>
+    <string name="intro">This app is designed to pin a quick and simple memo on the home screen.</string>
     <string name="howto">
         How to use:\n
-        0.Long press on your home screen.\n
-        1.Select WIDGETS on the bottom.\n
-        2.Scroll down till you find the app icon.\n
-        3.Long press the icon to pin it on the home screen.\n
-        4.An configuration interface would show up.\n
-        5.Set a title, content, icon and color for the memo.\n
-        6.Click the button DONE when you finish.\n
-        7.To remove the memo, drag it to the REMOVE area.\n
-        8.To resize it, long click to see the adjustable frame
+        0. Long press on the home screen.\n\n
+        1. Select WIDGETS on the bottom.\n\n
+        2. Scroll down till you find the app icon.\n\n
+        3. Long press the icon to pin it on the home screen.\n\n
+        4. An configuration interface would show up.\n\n
+        5. Configure the memo and Click DONE.\n\n
+        6. Long click to resize.\n\n
     </string>
 </resources>
